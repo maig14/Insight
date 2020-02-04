@@ -38,3 +38,16 @@ st.markdown('#### 2020A Health Data Science')
 
 st.markdown('## Clinical Trial Insights')
 st.markdown('---')
+
+enroll = st.number_input('Enrollment')
+disease = st.selectbox('Disease', example_diseases)
+
+phase = st.selectbox('Phase', phases)
+company = st.selectbox('Company', example_sites)
+
+features = [enroll, disease, phase, company]
+
+model = joblib.load(open('model.pkl', 'rb'))
+
+if st.button('Predict'):
+    prediction = model.predict(features)
