@@ -47,7 +47,7 @@ company = st.selectbox('Company', example_sites)
 
 features = [enroll, disease, phase, company]
 
-model = joblib.load(open('model.pkl', 'rb'))
+# model = joblib.load(open('model.pkl', 'rb'))
 
-if st.button('Predict'):
-    prediction = model.predict(features)
+#if st.button('Predict'):
+#    prediction = model.predict(features)
