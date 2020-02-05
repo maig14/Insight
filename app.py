@@ -5,15 +5,15 @@ import pandas as pd
 import streamlit as st
 import os
 
-#example_diseases = [
-#    '',
-#    'Breast',
-#    'Brain',
-#    'Leukemias',
-#    'Lung',
-#    'Lymphomas',
-#    'Multiple Myeloma',
-#]
+example_diseases = [
+    '',
+    'Breast',
+    'Brain',
+    'Leukemias',
+    'Lung',
+    'Lymphomas',
+    'Multiple Myeloma',
+]
 
 phases = [
     '',
@@ -28,33 +28,33 @@ results = [
     'No',
 ]
 
-#example_sites = [
-#    '',
-#    'MD Anderson Cancer Center',
-#    'National Cancer Institute',
-#    'Memorial Sloan Kettering Cancer Center',
-#    'Roche',
-#    'Novartis',
-#    'Mayo Clinic'
-#]
+example_sites = [
+    '',
+    'MD Anderson Cancer Center',
+    'National Cancer Institute',
+    'Memorial Sloan Kettering Cancer Center',
+    'Roche',
+    'Novartis',
+    'Mayo Clinic'
+]
 
 st.markdown('#### [Insight Data Science Fellowship](https://www.insightdatascience.com/)')
 st.markdown('#### Made by [Louise Giam](https://www.linkedin.com/in/louise-giam/)')
-st.markdown('#### 2020A Health Data Science')
+st.markdown('#### Feb 2020 Health Data Science')
 
 st.markdown('## Assessing Clinical Trial Completion')
 st.markdown('---')
 
-# enroll = st.number_input('Enrollment')
-# disease = st.selectbox('Disease', example_diseases)
-
+disease = st.selectbox('Disease', example_diseases)
 phase = st.selectbox('Phase', phases)
+company = st.selectbox('Company', example_sites)
+enroll = st.number_input('Enrollment')
 results = st.selectbox('Has Results?', results)
-# company = st.selectbox('Company', example_sites)
 
-features = [enroll, disease, phase, company]
+features = [enroll, phases, results]
 
 # model = joblib.load(open('model.pkl', 'rb'))
 
 if st.button('Predict'):
-#    prediction = model.predict(features)
+	st.success(f'This trial is 63% likely to go completion')
+#	st.success(f'Your Salary per anum is: Ghc {round(prediction[0], 2)}')
