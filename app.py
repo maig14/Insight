@@ -45,7 +45,7 @@ st.markdown('#### Feb 2020 Health Data Science')
 st.markdown('## Assessing Clinical Trial Completion')
 st.markdown('---')
 
-disease = st.selectbox('Disease', example_diseases)
+disease = st.selectbox('Cancer', example_diseases)
 phase = st.selectbox('Phase', phases)
 company = st.selectbox('Company', example_sites)
 enroll = st.number_input('Enrollment')
@@ -56,5 +56,5 @@ features = [enroll, phases, results]
 # model = joblib.load(open('model.pkl', 'rb'))
 
 if st.button('Predict'):
-	st.success(f'This trial is 63% likely to go completion')
+	st.success(f'Likelihood of completion: 63%')
 #	st.success(f'Your Salary per anum is: Ghc {round(prediction[0], 2)}')
